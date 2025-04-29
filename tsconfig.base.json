@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@enfants": ["libs/features/enfants/src/index.ts"],
+      "@accueil": ["libs/features/accueil/src/index.ts"],
+      "@parents": ["libs/features/parents/src/index.ts"],
+      "@share-ui": ["libs/share/ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

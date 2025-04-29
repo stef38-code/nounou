@@ -1,5 +1,7 @@
 # Nounou
-
+```sh
+/home/hussard/workspace/angular/nx-workspace/nounou/node_modules/.bin/nx g @nx/angular:library --directory=libs/features/accueil --lazy=true --name=accueil --routing=true --inlineStyle=true --prefix=lib --no-interactive
+```
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
 ✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.

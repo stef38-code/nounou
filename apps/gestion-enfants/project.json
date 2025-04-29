@@ -21,7 +21,10 @@
             "input": "apps/gestion-enfants/public"
           }
         ],
-        "styles": ["apps/gestion-enfants/src/styles.css"],
+        "styles": [
+        "node_modules/ng-zorro-antd/ng-zorro-antd.aliyun.css",
+        "apps/gestion-enfants/src/styles.css"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -29,8 +32,8 @@
           "budgets": [
             {
               "type": "initial",
-              "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "maximumWarning": "1mb",
+              "maximumError": "2mb"
             },
             {
               "type": "anyComponentStyle",

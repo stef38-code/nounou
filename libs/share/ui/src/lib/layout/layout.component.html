@@ -6,15 +6,13 @@
   >
     <div class="logo" routerLink="/accueil"></div>
     <ul nz-menu nzTheme="dark" nzMode="inline">
-      <li nz-submenu nzTitle="Enfants" nzIcon="user">
-        <ul>
-          <li nz-menu-item routerLink="/enfants">Liste</li>
-        </ul>
+      <li nz-menu-item routerLink="/enfants">
+        <nz-icon nzType="user" />
+        <span>Enfants</span>
       </li>
-      <li nz-submenu nzTitle="Parents" nzIcon="team">
-        <ul>
-          <li nz-menu-item routerLink="/parents">Liste</li>
-        </ul>
+      <li nz-menu-item routerLink="/parents">
+        <nz-icon nzType="team" />
+        <span>Parents</span>
       </li>
     </ul>
   </nz-sider>

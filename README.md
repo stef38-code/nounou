@@ -2,6 +2,13 @@
 ```sh
 /home/hussard/workspace/angular/nx-workspace/nounou/node_modules/.bin/nx g @nx/angular:library --directory=libs/features/accueil --lazy=true --name=accueil --routing=true --inlineStyle=true --prefix=lib --no-interactive
 ```
+```sh
+# Lance les TU de tous les projets
+nx run-many --target=test --all
+# Lancer le int sur tous les projet
+nx run-many --target=lint --all
+```
+
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
 ✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.

@@ -1,7 +1,7 @@
 {
   "name": "core",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/share/core/src",
+  "sourceRoot": "libs/share/core/src/lib",
   "prefix": "core",
   "projectType": "library",
   "tags": [],

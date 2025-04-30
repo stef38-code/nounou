@@ -1,1 +1,28 @@
-<p>Enfants works!</p>
+<nz-table nzTitle="Liste des enfants" nzBordered #colSpanTable [nzData]="enfants()">
+  <thead>
+  <tr>
+    <th scope="col" nzAlign='center'>Nom</th>
+    <th scope="col" nzAlign='center'>Prénom</th>
+    <th scope="col" nzAlign='center'>Date de Naissance</th>
+    <th scope="col" nzAlign='center'>Sexe</th>
+    <th scope="col" nzAlign='center'>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+    @for (enfant of colSpanTable.data; track enfant; let i = $index) {
+      <tr>
+        <td nzAlign='center'>{{ enfant.nom }}</td>
+        <td nzAlign='center'>{{ enfant.prenom }}</td>
+        <td nzAlign='center'>{{ enfant.dateNaissance | date: 'dd/MM/yyyy' }}</td>
+        <td nzAlign='center'>
+          {{ enfant.sexe }}
+        </td>
+        <td nzAlign='center'>
+          <a nz-button nzType="link">Modifier</a>
+          <a nz-button nzType="link" nzDanger>Supprimer</a>
+        </td>
+      </tr>
+    }
+  </tbody>
+</nz-table>
+

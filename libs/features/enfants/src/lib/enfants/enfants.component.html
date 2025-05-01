@@ -1,4 +1,10 @@
-<nz-table nzTitle="Liste des enfants" nzBordered #colSpanTable [nzData]="enfants()">
+<section>
+  <header>
+    <h1>Gestion des Enfants</h1>
+    <p>Ici, vous pouvez afficher, ajouter ou modifier les informations des enfants.</p>
+    <h2>Liste des Enfants</h2>
+  </header>
+  <nz-table [nzBordered]="true" #colSpanTable [nzData]="enfants()">
   <thead>
   <tr>
     <th scope="col" nzAlign='center'>Nom</th>
@@ -15,14 +21,29 @@
         <td nzAlign='center'>{{ enfant.prenom }}</td>
         <td nzAlign='center'>{{ enfant.dateNaissance | date: 'dd/MM/yyyy' }}</td>
         <td nzAlign='center'>
-          {{ enfant.sexe }}
+          @if (enfant.sexe === 'Homme') {
+            <img
+              [src]="'garcon.png'"
+              alt="sexe garçon"
+              width="24"
+              height="24">
+          }@else{
+            <img
+              [src]="'fille.png'"
+              alt="sexe fille"
+              width="24"
+              height="24">
+          }
+
+
         </td>
         <td nzAlign='center'>
           <a nz-button nzType="link">Modifier</a>
-          <a nz-button nzType="link" nzDanger>Supprimer</a>
+          <a nz-button nzType="link" [nzDanger]="true">Supprimer</a>
         </td>
       </tr>
     }
   </tbody>
 </nz-table>
 
+</section>

@@ -1,7 +1,13 @@
 # Nounou
+
 ```sh
 /home/hussard/workspace/angular/nx-workspace/nounou/node_modules/.bin/nx g @nx/angular:library --directory=libs/features/accueil --lazy=true --name=accueil --routing=true --inlineStyle=true --prefix=lib --no-interactive
 ```
+```sh
+#todo revoir
+npx eslint . --ext .ts *.html
+```
+
 ```sh
 # Lance les TU de tous les projets
 nx run-many --target=test --all

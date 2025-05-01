@@ -14,7 +14,12 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint"
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{workspaceRoot}/eslint/{projectRoot}"],
+      "options": {
+        "lintFilePatterns": ["{workspaceRoot}/**/*.ts", "{workspaceRoot}/**/*.html"],
+        "exclude": ["**/node_modules/**"]
+      }
     }
   }
 }

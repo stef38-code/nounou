@@ -4,46 +4,31 @@
             [nzTrigger]="null"
             nzBreakpoint="lg"
   >
-    <div class="flex flex-column -column-4">
-      <div class="flex align-items-center justify-content-center gap-4">
-        <section role="region" aria-label="Section Accueil">
-          <button nz-button nzGhost routerLink="/accueil">
-            <img nz-icon src="/home.png" alt="" width="24"
-                 height="24" />
-            Accueil
-          </button>
-        </section>
-        <section role="region" aria-label="Section Enfants">
-          <button nz-button nzGhost routerLink="/enfants">
-            <img nz-icon src="/enfants.png" alt="" width="24"
-                 height="24" />
-            Enfants
-          </button>
-        </section>
-        <section role="region" aria-label="Section Parents">
-          <button nz-button nzGhost routerLink="/parents">
-            <img nz-icon src="/parents.png" alt="" width="24"
-                 height="24" />
-            Parents
-          </button>
-        </section>
-      </div>
+    <div class="flex flex-column align-items-center justify-content-center gap-4 mt-4">
+      @for (item of sections; track item.label) {
+        <app-sider-menu-item
+          [siderMenuItem]="item"
+        >
+        </app-sider-menu-item>
+      }
     </div>
   </nz-sider>
   <nz-layout>
     <nz-header>
-      <nz-icon
-        class="trigger"
-        [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-        (click)="isCollapsed = !isCollapsed"
-        onkeydown="isCollapsed = !isCollapsed"
-      />
+
+      <button nz-button class="trigger" type="button"
+              [nzType]="'text'" nz-icon aria-label="Toggle Sidebar" (click)="isCollapsed = !isCollapsed">
+        <img [ngSrc]="isCollapsed ? '/chevron_droite.png' : '/chevron_gauche.png'" alt="" width="16" height="16" />
+      </button>
+
     </nz-header>
     <nz-content class="inner-content">
       <main class="app-content">
         <router-outlet></router-outlet>
       </main>
     </nz-content>
-    <nz-footer role="contentinfo">Stéphane B.</nz-footer>
+    <footer>
+      <nz-footer>Stéphane B.</nz-footer>
+    </footer>
   </nz-layout>
 </nz-layout>

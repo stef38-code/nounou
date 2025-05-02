@@ -2,7 +2,7 @@
   "name": "accueil",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/features/accueil/src",
-  "prefix": "lib",
+  "prefix": "app",
   "projectType": "library",
   "tags": [],
   "targets": {

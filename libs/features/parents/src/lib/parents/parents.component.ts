@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'prts-parents',
+  selector: 'app-parents',
   imports: [CommonModule],
   templateUrl: './parents.component.html',
   styles: ``,

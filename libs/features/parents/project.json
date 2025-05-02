@@ -2,7 +2,7 @@
   "name": "parents",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/features/parents/src",
-  "prefix": "prts",
+  "prefix": "app",
   "projectType": "library",
   "tags": [],
   "targets": {

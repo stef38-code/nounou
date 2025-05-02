@@ -7,7 +7,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzNoAnimationModule } from 'ng-zorro-antd/core/no-animation';
 
 @Component({
-  selector: 'share-ui-layout',
+  selector: 'app-layout',
   imports: [
     NzNoAnimationModule,
     NzBreadCrumbModule,

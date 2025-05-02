@@ -1,18 +1,33 @@
 import nx from '@nx/eslint-plugin';
 import baseConfig from '../../../eslint.config.mjs';
+import angularEslintPlugin from '@angular-eslint/eslint-plugin';
 
 export default [
   ...baseConfig,
   ...nx.configs['flat/angular'],
+  ...nx.configs['flat/base'],
+  ...nx.configs['flat/typescript'],
   ...nx.configs['flat/angular-template'],
   {
     files: ['**/*.ts'],
+    plugins: {
+      '@angular-eslint': angularEslintPlugin,
+    },
+    languageOptions: {
+      parserOptions: {
+        project: './tsconfig.base.json',
+        sourceType: 'module',
+        ecmaVersion: 2020,
+      },
+    },
+
     rules: {
+      ...angularEslintPlugin.configs.recommended.rules,
       '@angular-eslint/directive-selector': [
         'error',
         {
           type: 'attribute',
-          prefix: 'efts',
+          prefix: 'app',
           style: 'camelCase',
         },
       ],
@@ -20,7 +35,7 @@ export default [
         'error',
         {
           type: 'element',
-          prefix: 'efts',
+          prefix: 'app',
           style: 'kebab-case',
         },
       ],

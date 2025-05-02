@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'lib-accueil',
+  selector: 'app-accueil',
   imports: [CommonModule],
   templateUrl: './accueil.component.html',
   styles: ``,

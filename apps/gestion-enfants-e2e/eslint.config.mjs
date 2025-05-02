@@ -1,4 +1,5 @@
 import playwright from 'eslint-plugin-playwright';
+import angularEslintPlugin from '@angular-eslint/eslint-plugin';
 import baseConfig from '../../eslint.config.mjs';
 
 export default [
@@ -6,7 +7,13 @@ export default [
   ...baseConfig,
   {
     files: ['**/*.ts', '**/*.js'],
+    plugins: {
+      '@angular-eslint': angularEslintPlugin,
+    },
+
     // Override or add rules here
-    rules: {},
+    rules: {
+      ...angularEslintPlugin.configs.recommended.rules,
+    },
   },
 ];

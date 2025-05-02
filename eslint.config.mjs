@@ -75,11 +75,13 @@ export default [
     rules: {
       ...angularEslintTemplatePlugin.configs.recommended.rules, // Charger les règles HTML Angular recommandées
       'jsx-a11y/alt-text': 'warn', // Vérifie les balises nécessitant un texte alternatif (img, etc.)
-      //'@angular-eslint/template/accessibility-elements-content': 'warn', // Vérifie le contenu des balises comme <button>
-      //'@angular-eslint/template/accessibility-label-has-associated-control': 'warn', // Vérifie l'association des labels
-      //'@angular-eslint/template/accessibility-table-scope': 'warn', // Vérifie les attributs scope pour <th>
-      //'@angular-eslint/template/accessibility-valid-aria': 'warn', // Vérifie les attributs ARIA valides
-      //'@angular-eslint/template/no-positive-tabindex': 'error', // Interdit les tabindex positifs
+      '@angular-eslint/template/button-has-type' : 'warn',
+      '@angular-eslint/template/no-distracting-elements': 'warn',
+      '@angular-eslint/template/table-scope' : 'warn',
+      '@angular-eslint/template/elements-content': 'warn', // Vérifie le contenu des balises comme <button>
+      '@angular-eslint/template/label-has-associated-control': 'warn', // Vérifie l'association des labels
+      '@angular-eslint/template/valid-aria': 'warn', // Vérifie les attributs ARIA valides
+      '@angular-eslint/template/use-track-by-function': 'warn', // Interdit les tabindex positifs
 
     },
   },

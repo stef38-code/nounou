@@ -1,5 +1,6 @@
 import nx from '@nx/eslint-plugin';
 import baseConfig from '../../eslint.config.mjs';
+import angularEslintPlugin from '@angular-eslint/eslint-plugin';
 
 export default [
   ...baseConfig,
@@ -7,6 +8,9 @@ export default [
   ...nx.configs['flat/angular-template'],
   {
     files: ['**/*.ts'],
+    plugins: {
+      '@angular-eslint': angularEslintPlugin,
+    },
     rules: {
       '@angular-eslint/directive-selector': [
         'error',

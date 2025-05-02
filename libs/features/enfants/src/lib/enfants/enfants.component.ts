@@ -6,7 +6,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzTableModule } from 'ng-zorro-antd/table';
 
 @Component({
-  selector: 'efts-enfants',
+  selector: 'app-enfants',
   imports: [CommonModule, NzCardModule, NzButtonModule,NzTableModule],
   templateUrl: './enfants.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -2,7 +2,7 @@
   "name": "ui",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/share/ui/src",
-  "prefix": "share-ui",
+  "prefix": "app",
   "projectType": "library",
   "tags": [],
   "targets": {

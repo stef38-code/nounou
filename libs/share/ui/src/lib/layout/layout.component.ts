@@ -5,6 +5,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzNoAnimationModule } from 'ng-zorro-antd/core/no-animation';
+import {  NzButtonModule } from 'ng-zorro-antd/button';
 
 @Component({
   selector: 'app-layout',
@@ -16,6 +17,7 @@ import { NzNoAnimationModule } from 'ng-zorro-antd/core/no-animation';
     NzLayoutModule,
     RouterOutlet,
     RouterLink,
+    NzButtonModule,
   ],
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.css'],

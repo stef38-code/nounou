@@ -23,9 +23,15 @@
           }
         ],
         "styles": [
-        "node_modules/ng-zorro-antd/ng-zorro-antd.aliyun.css",
-        "apps/gestion-enfants/src/styles.css"
+           "apps/gestion-enfants/src/styles.css",
+           "apps/gestion-enfants/src/styles.less",
+          "node_modules/primeflex/primeflex.css"
         ],
+        "stylePreprocessorOptions": {
+          "includePaths": [
+            "node_modules"
+          ]
+        },
         "scripts": []
       },
       "configurations": {
@@ -69,6 +75,9 @@
       "options": {
         "buildTarget": "gestion-enfants:build"
       }
+    },
+    "test-a11y": {
+      "executor": "pa11y http://localhost:4200"
     },
     "lint": {
       "executor": "@nx/eslint:lint"

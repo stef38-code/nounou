@@ -1,20 +1,34 @@
 <nz-layout class="layout">
   <nz-sider nzTheme="dark"
-            nzCollapsible [(nzCollapsed)]="isCollapsed"
+            nzCollapsible="true" [(nzCollapsed)]="isCollapsed"
             [nzTrigger]="null"
             nzBreakpoint="lg"
   >
-    <div class="logo" routerLink="/accueil"></div>
-    <ul nz-menu nzTheme="dark" nzMode="inline">
-      <li nz-menu-item routerLink="/enfants">
-        <nz-icon nzType="user" />
-        <span>Enfants</span>
-      </li>
-      <li nz-menu-item routerLink="/parents">
-        <nz-icon nzType="team" />
-        <span>Parents</span>
-      </li>
-    </ul>
+    <div class="flex flex-column -column-4">
+      <div class="flex align-items-center justify-content-center gap-4">
+        <section role="region" aria-label="Section Accueil">
+          <button nz-button nzGhost routerLink="/accueil">
+            <img nz-icon src="/home.png" alt="" width="24"
+                 height="24" />
+            Accueil
+          </button>
+        </section>
+        <section role="region" aria-label="Section Enfants">
+          <button nz-button nzGhost routerLink="/enfants">
+            <img nz-icon src="/enfants.png" alt="" width="24"
+                 height="24" />
+            Enfants
+          </button>
+        </section>
+        <section role="region" aria-label="Section Parents">
+          <button nz-button nzGhost routerLink="/parents">
+            <img nz-icon src="/parents.png" alt="" width="24"
+                 height="24" />
+            Parents
+          </button>
+        </section>
+      </div>
+    </div>
   </nz-sider>
   <nz-layout>
     <nz-header>
@@ -30,6 +44,6 @@
         <router-outlet></router-outlet>
       </main>
     </nz-content>
-    <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
+    <nz-footer role="contentinfo">Stéphane B.</nz-footer>
   </nz-layout>
 </nz-layout>

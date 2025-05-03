@@ -1,53 +1,42 @@
-import { Injectable, signal } from '@angular/core';
-import { Enfant, Sexe } from '../models/enfant';
-
+import { inject, Injectable, signal } from '@angular/core';
+import { Enfant } from '../models/enfant';
+import { EnfantFakerService } from './enfants-faker.service';
 
 @Injectable({
   providedIn: 'root',
 })
+
+/**
+ * Service gérant les opérations liées aux enfants dans l'application.
+ * Fournit des fonctionnalités pour la gestion et la récupération des données des enfants.
+ */
 export class EnfantService {
-  // Signal contenant la liste des enfants
+  enfantFakerService = inject(EnfantFakerService);
+
+  /**
+   * Signal contenant la liste des enfants.
+   * Stocke et gère l'état de la liste des enfants de manière réactive.
+   */
   private readonly enfantsSignal = signal<Enfant[]>(this.genererListeEnfants());
 
-  // Méthode pour récupérer la liste des enfants sous forme de signal
+  /**
+   * Récupère le signal contenant la liste des enfants.
+   * @returns Signal contenant un tableau d'objets Enfant.
+   */
   getEnfantsSignal() {
     return this.enfantsSignal;
   }
 
-  // Générer une liste mock de 10 enfants âgés de moins ou égal à 3 ans
+  /**
+   * Génère une liste simulée de 20 enfants.
+   * Utilise le service EnfantFakerService pour créer des données fictives d'enfants.
+   * @returns Tableau d'objets Enfant contenant les données simulées.
+   */
   private genererListeEnfants(): Enfant[] {
     const enfants: Enfant[] = [];
-    for (let i = 0; i < 10; i++) {
-      enfants.push(this.creerEnfantMock(i));
+    for (let i = 0; i < 20; i++) {
+      enfants.push(this.enfantFakerService.creerEnfantMock());
     }
     return enfants;
-  }
-
-  // Création d'un enfant mock
-  private creerEnfantMock(index: number): Enfant {
-    const noms = ['Dupont', 'Martin', 'Durand', 'Lefèvre', 'Morel'];
-    const prenomsFilles = ['Sophie', 'Emma', 'Julie', 'Anna', 'Clara'];
-    const prenomsGarcons = ['Lucas', 'Hugo', 'Ethan', 'Leo', 'Maxime'];
-
-    const sexe: Sexe = Math.random() > 0.5 ? 'Femme' : 'Homme';
-    const nom = noms[index % noms.length];
-    const prenom =
-      sexe === 'Femme'
-        ? prenomsFilles[index % prenomsFilles.length]
-        : prenomsGarcons[index % prenomsGarcons.length];
-
-    const dateActuelle = new Date();
-    const ageEnJours = Math.floor(Math.random() * (3 * 365)); // Age random (< 3 ans)
-    const dateNaissance = new Date(
-      dateActuelle.setDate(dateActuelle.getDate() - ageEnJours)
-    );
-
-    return {
-      nom,
-      prenom,
-      dateNaissance,
-      sexe,
-      parents: [], // Vous pouvez également générer des parents mock si nécessaire
-    };
   }
 }

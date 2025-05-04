@@ -6,6 +6,7 @@ import { RelationType, SexeType } from './ModelType';
  * Représente une entité Parent avec des informations personnelles et de contact.
  *
  * @interface Parent
+ * @property {string} id - L'identifiant unique du parent.
  * @property {string} nom - Le nom de famille du parent.
  * @property {string} prenom - Le prénom du parent.
  * @property {RelationType} relation - Le type de relation que le parent a avec une autre entité ou personne.
@@ -15,6 +16,7 @@ import { RelationType, SexeType } from './ModelType';
  * @property {Telephone[]} telephones - Une liste des numéros de téléphone associés au parent.
  */
 export interface Parent {
+  id: string;
   nom: string;
   prenom: string;
   relation: RelationType;

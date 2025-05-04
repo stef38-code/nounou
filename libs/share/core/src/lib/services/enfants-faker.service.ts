@@ -4,6 +4,7 @@ import { Enfant } from '../models/enfant';
 import { Parent } from '../models/parent';
 import { SexeType } from '../models/ModelType';
 import { ParentsFakerService } from './parent-faker.service';
+import { v7 as uuidv7 } from 'uuid';
 
 /**
  * Service Angular responsable de la génération de données fictives pour des objets `Enfant`.
@@ -32,6 +33,7 @@ export class EnfantFakerService {
    * @return {Enfant} Les informations simulées d'un enfant.
    */
   private genererEnfantsMock(): Enfant {
+    const id: string = uuidv7().toString();
     // Générer le sexe
     const sexe: SexeType = Math.random() > 0.5 ? 'Femme' : 'Homme';
     // Définir les noms et prénoms
@@ -49,6 +51,7 @@ export class EnfantFakerService {
     const parents: Parent[] = this.parentFakerService.genererParentsMock();
 
     return {
+      id,
       nom,
       prenom,
       dateNaissance,

@@ -4,6 +4,7 @@ import { Parent } from '../models/parent';
 import { Adresse } from '../models/adresse';
 import { Email, Telephone } from '../models/communication';
 import { RelationType, SexeType } from '../models/ModelType';
+import { v7 as uuidv7 } from 'uuid';
 
 /**
  * Service injectable responsable de la génération de données factices pour les parents.
@@ -22,11 +23,12 @@ export class ParentsFakerService {
    */
   genererParentsMock(): Parent[] {
     const parents: Parent[] = [];
-    const nbParents: number = Math.random() > 0.5 ? 1 : 2;
+    const nbParents: number = Math.floor(Math.random() * 3); // Génère 0, 1 ou 2
+
     for (let i = 0; i < nbParents; i++) {
       // Générer le sexe
       const sexe: SexeType = Math.random() > 0.5 ? 'Femme' : 'Homme';
-
+      const id: string = uuidv7().toString();
       // Définir les noms et prénoms
       const prenom =
         sexe === 'Femme'
@@ -67,6 +69,7 @@ export class ParentsFakerService {
         },
       ];
       parents.push({
+        id: id,
         nom: nom,
         prenom: prenom,
         relation: relation,

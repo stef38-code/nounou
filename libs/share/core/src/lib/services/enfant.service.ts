@@ -19,6 +19,7 @@ export class EnfantService {
    */
   private readonly enfantsSignal = signal<Enfant[]>(this.genererListeEnfants());
 
+  constructor() {}
   /**
    * Récupère le signal contenant la liste des enfants.
    * @returns Signal contenant un tableau d'objets Enfant.
@@ -38,5 +39,11 @@ export class EnfantService {
       enfants.push(this.enfantFakerService.creerEnfantMock());
     }
     return enfants;
+  }
+
+  supprimer(id: string) {
+    this.enfantsSignal.set(
+      this.enfantsSignal().filter((enfant) => enfant.id !== id)
+    );
   }
 }

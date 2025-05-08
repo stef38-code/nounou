@@ -24,5 +24,6 @@
       "@share-ui": ["libs/share/ui/src/index.ts"]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": ["node_modules", "tmp"],
+  "include": ["**/*.ts", "**/*.html"]
 }

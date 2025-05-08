@@ -1,0 +1,110 @@
+import nx from '@nx/eslint-plugin';
+import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
+import angularEslintPlugin from '@angular-eslint/eslint-plugin';
+import ngParser from '@angular-eslint/template-parser';
+import { globalIgnores } from "eslint/config";
+import angularEslintTemplatePlugin from '@angular-eslint/eslint-plugin-template';
+import prettierPlugin from 'eslint-plugin-prettier';
+// Définir une constante pour les fichiers/dossiers à ignorer
+const ignorePaths = [
+  '**/dist',
+  '**/node_modules',
+  '**/coverage',
+  '**/.nx',
+  "**/.angular",
+  '**/build/**',
+  "**/.husky",
+  "**/.git",
+  "**/.vscode",
+  "**/.idea"
+];
+
+export default [
+  ...nx.configs['flat/base'],
+  ...nx.configs['flat/typescript'],
+  ...nx.configs['flat/javascript'],
+  globalIgnores(ignorePaths),
+  {
+    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
+    plugins:{
+      prettierPlugin
+    },
+    rules: {
+      '@nx/enforce-module-boundaries': [
+        'error',
+        {
+          enforceBuildableLibDependency: true,
+          allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?js$'],
+          depConstraints: [
+            {
+              sourceTag: '*',
+              onlyDependOnLibsWithTags: ['*'],
+            },
+          ],
+        },
+      ],
+      ...prettierPlugin.configs.rules
+    },
+  },
+  {
+    files: [
+      '**/*.ts',
+      '**/*.tsx',
+      '**/*.cts',
+      '**/*.mts',
+      '**/*.js',
+      '**/*.jsx',
+      '**/*.cjs',
+      '**/*.mjs',
+    ],
+    // Override or add rules here
+    rules: {},
+  },
+  {
+    files: ['**/*.ts'],
+    languageOptions: {
+      parserOptions: {
+        project: './tsconfig.base.json',
+        sourceType: 'module',
+        ecmaVersion: 2020,
+      },
+    },
+    plugins: {
+      '@angular-eslint': angularEslintPlugin,
+      'jsx-a11y': jsxA11yPlugin,
+    },
+    rules: {
+      ...angularEslintPlugin.configs.recommended.rules, // Charger les règles Angular recommandées
+      ...jsxA11yPlugin.configs.recommended.rules, // Charger les règles d'accessibilité recommandées
+      ...prettierPlugin.configs.rules,
+      'jsx-a11y/alt-text': 'warn', // Vérifie les balises nécessitant un texte alternatif
+      'jsx-a11y/label-has-associated-control': 'warn', // Vérifie l'association des labels avec les inputs
+      'jsx-a11y/no-static-element-interactions': 'warn', // Évite d'utiliser des événements interactifs sur des éléments non interactifs
+    },
+  },
+  // Règles pour les fichiers HTML Angular
+  {
+    files: ['**/*.html'],
+    languageOptions: {
+      parser: ngParser,
+    },
+    plugins: {
+      '@angular-eslint/template': angularEslintTemplatePlugin,
+    'jsx-a11y': jsxA11yPlugin,
+    //
+    },
+    rules: {
+      ...angularEslintTemplatePlugin.configs.recommended.rules, // Charger les règles HTML Angular recommandées
+      ...prettierPlugin.configs.rules,
+      'jsx-a11y/alt-text': 'warn', // Vérifie les balises nécessitant un texte alternatif (img, etc.)
+      '@angular-eslint/template/button-has-type' : 'warn',
+      '@angular-eslint/template/no-distracting-elements': 'warn',
+      '@angular-eslint/template/table-scope' : 'warn',
+      '@angular-eslint/template/elements-content': 'warn', // Vérifie le contenu des balises comme <button>
+      '@angular-eslint/template/label-has-associated-control': 'warn', // Vérifie l'association des labels
+      '@angular-eslint/template/valid-aria': 'warn', // Vérifie les attributs ARIA valides
+      '@angular-eslint/template/use-track-by-function': 'warn', // Interdit les tabindex positifs
+
+    },
+  },
+];

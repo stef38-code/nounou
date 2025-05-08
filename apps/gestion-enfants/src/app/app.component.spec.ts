@@ -5,10 +5,9 @@ import { RouterModule } from '@angular/router';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent,  RouterModule.forRoot([])],
+      imports: [AppComponent, RouterModule.forRoot([])],
     }).compileComponents();
   });
-
 
   it(`should have as title 'gestion-enfants'`, () => {
     const fixture = TestBed.createComponent(AppComponent);

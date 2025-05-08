@@ -12,13 +12,14 @@ import { fr_FR, provideNzI18n } from 'ng-zorro-antd/i18n';
 import { IconDefinition } from '@ant-design/icons-angular';
 import * as AllIcons from '@ant-design/icons-angular/icons';
 
-
 registerLocaleData(fr);
 
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
 };
-const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key])
+const icons: IconDefinition[] = Object.keys(antDesignIcons).map(
+  (key) => antDesignIcons[key]
+);
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -27,6 +28,6 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withJsonpSupport()),
     provideAnimationsAsync(),
     provideNzIcons(icons),
-    provideNzI18n(fr_FR)
+    provideNzI18n(fr_FR),
   ],
 };

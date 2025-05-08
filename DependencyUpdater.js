@@ -1,4 +1,4 @@
-const { execSync, exec } = require('child_process');
+const { execSync } = require('child_process');
 
 /**
  * Fonction pour obtenir les dépendances obsolètes avec `npm outdated`
@@ -13,7 +13,7 @@ function getOutdatedDependencies() {
     }
     console.error(
       "Erreur lors de l'exécution de `npm outdated` :",
-      err.message,
+      err.message
     );
     process.exit(1);
   }
@@ -64,7 +64,7 @@ async function installDependenciesInOrder(dependencies) {
     } catch (err) {
       console.error(
         `❌   Échec de la mise à jour de ${dep.name} :`,
-        err.message,
+        err.message
       );
       process.exit(1);
     }

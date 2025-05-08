@@ -10,7 +10,7 @@ describe('LayoutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LayoutComponent,RouterModule.forRoot([])],
+      imports: [LayoutComponent, RouterModule.forRoot([])],
       providers: [
         {
           provide: ActivatedRoute,
@@ -21,9 +21,7 @@ describe('LayoutComponent', () => {
           },
         },
       ],
-
-    })
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(LayoutComponent);
     component = fixture.componentInstance;

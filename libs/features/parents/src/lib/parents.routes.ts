@@ -5,6 +5,6 @@ export const parentsRoutes: Route[] = [
   {
     path: 'parents',
     loadComponent: async () =>
-      (await import('./parents/parents.component')).ParentsComponent,
+      (await import('./liste/liste.component')).ListeComponent,
   },
 ];

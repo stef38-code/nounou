@@ -2,7 +2,9 @@
   "name": "@nounou/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "format": "npx prettier --write \"{app,libs}/**/src/**/*.{ts,html,css}\""
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "19.2.10",

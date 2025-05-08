@@ -1,11 +1,22 @@
 <section [attr.aria-label]="'Section ' + siderMenuItem().label">
-  <button nz-button nzType="text" type="button" [attr.aria-label]="siderMenuItem().label"
-          [routerLink]="siderMenuItem().link"
-          nzTooltipPlacement="topRight"
-          nz-tooltip
-          [nzTooltipTitle]="siderMenuItem().label">
-    @if( siderMenuItem().icon ) {
-      <img nz-icon [ngSrc]="siderMenuItem().icon ?? '/favicon.ico'" alt=""  width="24" height="24" />
+  <button
+    nz-button
+    nzType="text"
+    type="button"
+    [attr.aria-label]="siderMenuItem().label"
+    [routerLink]="siderMenuItem().link"
+    nzTooltipPlacement="topRight"
+    nz-tooltip
+    [nzTooltipTitle]="siderMenuItem().label"
+  >
+    @if (siderMenuItem().icon) {
+      <img
+        nz-icon
+        [ngSrc]="siderMenuItem().icon ?? '/favicon.ico'"
+        alt=""
+        width="24"
+        height="24"
+      />
     }
   </button>
 </section>

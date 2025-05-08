@@ -1,3 +1,3 @@
 export * from './lib/parents.routes';
 
-export * from './lib/parents/parents.component';
+export * from './lib/liste/liste.component';

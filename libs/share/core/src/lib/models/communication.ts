@@ -19,4 +19,3 @@ export interface Telephone {
   /** Le numéro de téléphone */
   telephone: string;
 }
-

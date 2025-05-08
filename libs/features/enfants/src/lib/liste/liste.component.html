@@ -1,14 +1,21 @@
 <section>
   <header>
     <h1>Gestion des Enfants</h1>
-    <p>Ici, vous pouvez afficher, ajouter ou modifier les informations des enfants.</p>
+    <p>
+      Ici, vous pouvez afficher, ajouter ou modifier les informations des
+      enfants.
+    </p>
     <div nz-flex [nzJustify]="'flex-end'" [nzAlign]="'flex-end'">
-      <button nz-button type="button"
-              [nzType]="'text'" [attr.aria-label]="'Ajouter un nouvel enfant'"
-              nzTooltipPlacement="topRight"
-              nz-tooltip
-              [nzTooltipTitle]="'Ajouter un nouvel enfant'"
-              (click)="ajouterEnfant()">
+      <button
+        nz-button
+        type="button"
+        [nzType]="'text'"
+        [attr.aria-label]="'Ajouter un nouvel enfant'"
+        nzTooltipPlacement="topRight"
+        nz-tooltip
+        [nzTooltipTitle]="'Ajouter un nouvel enfant'"
+        (click)="ajouterEnfant()"
+      >
         <img ngSrc="ajouter.png" alt="" width="22" height="22" />
       </button>
     </div>
@@ -17,38 +24,30 @@
   <nz-table [nzBordered]="true" #colSpanTable [nzData]="enfants()">
     <thead>
     <tr>
-      <th scope="col" nzAlign='center'>Nom</th>
-      <th scope="col" nzAlign='center'>Prénom</th>
-      <th scope="col" nzAlign='center'>Date de Naissance</th>
-      <th scope="col" nzAlign='center'>Sexe</th>
-      <th scope="col" nzAlign='center'>Parents</th>
-      <th scope="col" nzAlign='center'>Actions</th>
+      <th scope="col" nzAlign="center">Nom</th>
+      <th scope="col" nzAlign="center">Prénom</th>
+      <th scope="col" nzAlign="center">Date de Naissance</th>
+      <th scope="col" nzAlign="center">Sexe</th>
+      <th scope="col" nzAlign="center">Parents</th>
+      <th scope="col" nzAlign="center">Actions</th>
     </tr>
     </thead>
     <tbody>
       @for (enfant of colSpanTable.data; track enfant.id) {
         <tr>
-          <td nzAlign='center'>{{ enfant.nom }}</td>
-          <td nzAlign='center'>{{ enfant.prenom }}</td>
-          <td nzAlign='center'>{{ enfant.dateNaissance | date: 'dd/MM/yyyy' }}</td>
-          <td nzAlign='center'>
-            @if (enfant.sexe === 'Homme') {
-              <img
-                ngSrc="/garcon.png"
-                alt="garçon"
-                width="24"
-                height="24">
-            } @else {
-              <img
-                ngSrc="/fille.png"
-                alt="fille"
-                width="24"
-                height="24">
-            }
-
-
+          <td nzAlign="center">{{ enfant.nom }}</td>
+          <td nzAlign="center">{{ enfant.prenom }}</td>
+          <td nzAlign="center">
+            {{ enfant.dateNaissance | date: 'dd/MM/yyyy' }}
           </td>
-          <td nzAlign='center'>
+          <td nzAlign="center">
+            @if (enfant.sexe === 'Homme') {
+              <img ngSrc="/garcon.png" alt="garçon" width="24" height="24" />
+            } @else {
+              <img ngSrc="/fille.png" alt="fille" width="24" height="24" />
+            }
+          </td>
+          <td nzAlign="center">
             <div class="flex flex-column">
               @if (enfant.parents.length > 0) {
                 @for (parent of enfant.parents; track parent.id) {
@@ -58,27 +57,43 @@
                     nzType="link"
                     (click)="modifierParents(parent.id)"
                     (keydown)="modifierParents(parent.id)"
-                    aria-label="Ajouter un ou plusieurs parents">{{ parent.nom }} {{ parent.prenom }}
+                    aria-label="Ajouter un ou plusieurs parents"
+                  >
+                    {{ parent.nom }} {{ parent.prenom }}
                   </button>
                 }
               } @else {
-                <button nz-button type="button"
-                        [nzType]="'text'" [attr.aria-label]="'Ajouter un ou plusieurs parents'"
-                        (click)="ajouterParents(enfant.id)">
+                <button
+                  nz-button
+                  type="button"
+                  [nzType]="'text'"
+                  [attr.aria-label]="'Ajouter un ou plusieurs parents'"
+                  (click)="ajouterParents(enfant.id)"
+                >
                   <img ngSrc="ajouter.png" alt="" width="22" height="22" />
                 </button>
               }
             </div>
           </td>
-          <td nzAlign='center'>
-            <button nz-button type="button"
-                    [nzType]="'text'" [attr.aria-label]="'Modifier ' + enfant.nom + ' ' + enfant.prenom"
-                    (click)="modifierEnfant(enfant.id)">
+          <td nzAlign="center">
+            <button
+              nz-button
+              type="button"
+              [nzType]="'text'"
+              [attr.aria-label]="'Modifier ' + enfant.nom + ' ' + enfant.prenom"
+              (click)="modifierEnfant(enfant.id)"
+            >
               <img ngSrc="modifier.png" alt="" width="22" height="22" />
             </button>
-            <button nz-button type="button"
-                    [nzType]="'text'" [attr.aria-label]="'Supprimer ' + enfant.nom + ' ' + enfant.prenom"
-                    (click)="supprimerEnfant(enfant.id)">
+            <button
+              nz-button
+              type="button"
+              [nzType]="'text'"
+              [attr.aria-label]="
+                'Supprimer ' + enfant.nom + ' ' + enfant.prenom
+              "
+              (click)="supprimerEnfant(enfant.id)"
+            >
               <img ngSrc="poubelle.png" alt="" width="22" height="22" />
             </button>
           </td>
@@ -86,5 +101,4 @@
       }
     </tbody>
   </nz-table>
-
 </section>

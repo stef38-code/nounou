@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-parents',
   imports: [CommonModule],
-  templateUrl: './parents.component.html',
+  templateUrl: './liste.component.html',
   styles: ``,
 })
-export class ParentsComponent {}
+export class ListeComponent {}

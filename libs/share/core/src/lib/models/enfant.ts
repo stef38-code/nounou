@@ -1,7 +1,6 @@
 import { Parent } from './parent';
 import { SexeType } from './ModelType';
 
-
 /**
  * Représente un enfant avec des informations personnelles, ses parents, et d'autres attributs pertinents.
  *
@@ -21,5 +20,3 @@ export interface Enfant {
   sexe: SexeType;
   parents: Parent[];
 }
-
-

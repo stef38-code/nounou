@@ -25,6 +25,3 @@ export interface Parent {
   emails: Email[];
   telephones: Telephone[];
 }
-
-
-

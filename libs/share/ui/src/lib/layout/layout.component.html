@@ -1,26 +1,36 @@
 <nz-layout class="layout">
-  <nz-sider nzTheme="dark"
-            nzCollapsible="true" [(nzCollapsed)]="isCollapsed"
-            [nzTrigger]="null"
-            nzBreakpoint="lg"
+  <nz-sider
+    nzTheme="dark"
+    nzCollapsible="true"
+    [(nzCollapsed)]="isCollapsed"
+    [nzTrigger]="null"
+    nzBreakpoint="lg"
   >
-    <div class="flex flex-column align-items-center justify-content-center gap-4 mt-4">
+    <div
+      class="flex flex-column align-items-center justify-content-center gap-4 mt-4"
+    >
       @for (item of sections; track item.label) {
-        <app-sider-menu-item
-          [siderMenuItem]="item"
-        >
-        </app-sider-menu-item>
+        <app-sider-menu-item [siderMenuItem]="item"></app-sider-menu-item>
       }
     </div>
   </nz-sider>
   <nz-layout>
     <nz-header>
-
-      <button nz-button class="trigger" type="button"
-              [nzType]="'text'" aria-label="Toggle Sidebar" (click)="isCollapsed = !isCollapsed">
-        <img [ngSrc]="isCollapsed ? 'chevron_droite.png' : 'chevron_gauche.png'" alt="" width="16" height="16" />
+      <button
+        nz-button
+        class="trigger"
+        type="button"
+        [nzType]="'text'"
+        aria-label="Toggle Sidebar"
+        (click)="isCollapsed = !isCollapsed"
+      >
+        <img
+          [ngSrc]="isCollapsed ? 'chevron_droite.png' : 'chevron_gauche.png'"
+          alt=""
+          width="16"
+          height="16"
+        />
       </button>
-
     </nz-header>
     <nz-content class="inner-content">
       <main class="app-content">

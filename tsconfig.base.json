@@ -16,8 +16,10 @@
     "baseUrl": ".",
     "paths": {
       "@accueil": ["libs/features/accueil/src/index.ts"],
-      "@enfants": ["libs/features/enfants/src/index.ts"],
       "@core": ["libs/share/core/src/lib/index.ts"],
+      "@enfants": [
+        "libs/features/enfants/src/index.ts"
+      ],
       "@parents": ["libs/features/parents/src/index.ts"],
       "@share-ui": ["libs/share/ui/src/index.ts"]
     }

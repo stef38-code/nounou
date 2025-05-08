@@ -3,7 +3,6 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "root": "apps/gestion-enfants",
   "sourceRoot": "apps/gestion-enfants/src",
   "tags": [],
   "targets": {
@@ -23,8 +22,8 @@
           }
         ],
         "styles": [
-           "apps/gestion-enfants/src/styles.css",
-           "apps/gestion-enfants/src/styles.less",
+          "apps/gestion-enfants/src/styles.css",
+          "apps/gestion-enfants/src/styles.less",
           "node_modules/primeflex/primeflex.css"
         ],
         "stylePreprocessorOptions": {
@@ -68,7 +67,8 @@
           "buildTarget": "gestion-enfants:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "continuous": true
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",

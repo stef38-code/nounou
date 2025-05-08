@@ -18,10 +18,10 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
     NzFlexModule,
     NzToolTipModule,
   ],
-  templateUrl: './enfants.component.html',
+  templateUrl: './liste.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class EnfantsComponent {
+export class ListeComponent {
   enfantService = inject(EnfantService);
   enfants = this.enfantService.getEnfantsSignal();
 

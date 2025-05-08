@@ -1,3 +1,2 @@
-export * from './lib/lib.routes';
-
-export * from './lib/enfants/enfants.component';
+export * from './lib/enfants.routes';
+export * from './lib/liste/liste.component';

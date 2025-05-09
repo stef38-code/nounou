@@ -8,18 +8,17 @@
     "prepare": "husky"
   },
   "lint-staged": {
-  "*.ts": [
-    "eslint --fix",
-    "prettier --write"
-  ],
-  "*.html": [
-    "prettier --write"
-  ],
-  "*.css": [
-    "prettier --write"
-  ]
-},
-
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.css": [
+      "prettier --write"
+    ]
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "19.2.10",
@@ -32,7 +31,7 @@
     "@angular/router": "19.2.10",
     "@ant-design/icons-angular": "^19.0.0",
     "@faker-js/faker": "^9.7.0",
-    "dayjs": "^1.11.13",
+    "date-fns": "^4.1.0",
     "ng-zorro-antd": "^19.2.2",
     "primeflex": "^4.0.0",
     "rxjs": "~7.8.0",

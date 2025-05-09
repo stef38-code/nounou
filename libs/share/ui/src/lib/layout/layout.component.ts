@@ -33,6 +33,7 @@ export class LayoutComponent {
   sections: SiderMenuItem[] = [
     { label: 'Accueil', link: '/accueil', icon: '/home.png' },
     { label: 'Enfants', link: '/enfants', icon: '/enfants.png' },
+    { label: 'Enfants-detail', link: '/enfants/details', icon: '/enfants.png' },
     { label: 'Parents', link: '/parents', icon: '/parents.png' },
   ];
 }

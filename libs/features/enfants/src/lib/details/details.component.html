@@ -1,0 +1,141 @@
+<form
+  nz-form
+  [formGroup]="enfantForm"
+  (ngSubmit)="onSubmit()"
+  [nzNoColon]="true"
+>
+  <!-- Identifiant -->
+  <nz-form-item>
+    <nz-form-label [nzFor]="'id'" nzRequired>Identifiant *</nz-form-label>
+    <nz-form-control>
+      <input
+        nz-input
+        id="id"
+        formControlName="id"
+        aria-describedby="id-help"
+        readonly
+      />
+      <div id="id-help" class="ant-form-explain">
+        Identifiant unique de l’enfant (lecture seule).
+      </div>
+    </nz-form-control>
+  </nz-form-item>
+
+  <!-- Nom -->
+  <nz-form-item>
+    <nz-form-label [nzFor]="'nom'" nzRequired>Nom</nz-form-label>
+    <nz-form-control
+      [nzHasFeedback]="
+        this.enfantForm.controls['nom'].dirty ||
+        this.enfantForm.controls['nom'].touched
+      "
+      [nzValidateStatus]="
+        (this.enfantForm.controls['nom'].touched ||
+          this.enfantForm.controls['nom'].dirty) &&
+        this.enfantForm.controls['nom'].errors
+          ? 'error'
+          : 'success'
+      "
+    >
+      <input
+        nz-input
+        id="nom"
+        formControlName="nom"
+        aria-required="true"
+        required
+        placeholder="Entrez le nom"
+      />
+    </nz-form-control>
+  </nz-form-item>
+
+  <!-- Prénom -->
+  <nz-form-item>
+    <nz-form-label [nzFor]="'prenom'" nzRequired>Prénom</nz-form-label>
+    <nz-form-control>
+      <input
+        nz-input
+        id="prenom"
+        formControlName="prenom"
+        aria-required="true"
+        required
+        placeholder="Entrez le prénom"
+      />
+    </nz-form-control>
+  </nz-form-item>
+
+  <!-- Date de naissance -->
+  <nz-form-item>
+    <nz-form-label [nzFor]="'dateNaissance'" nzRequired
+      >Date de naissance</nz-form-label
+    >
+    <nz-form-control>
+      <nz-date-picker
+        formControlName="dateNaissance"
+        id="dateNaissance"
+        [nzFormat]="'dd/MM/YYYY'"
+        required
+        aria-required="true"
+        placeholder="Sélectionnez la date de naissance"
+      ></nz-date-picker>
+    </nz-form-control>
+  </nz-form-item>
+
+  <!-- Sexe -->
+  <nz-form-item>
+    <nz-form-label [nzFor]="'sexe'" nzRequired>Sexe</nz-form-label>
+    <nz-form-control>
+      <nz-select
+        id="sexe"
+        formControlName="sexe"
+        [nzAllowClear]="true"
+        aria-required="true"
+        required
+        placeholder="Sélectionnez un sexe"
+      >
+        @for (option of sexeOptions; track option.value) {
+          <nz-option [nzValue]="option.value" [nzLabel]="option.label">
+          </nz-option>
+        }
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+
+  <!-- Parents -->
+  <nz-form-item>
+    <nz-form-label [nzFor]="'parents'">Parents</nz-form-label>
+    <nz-form-control>
+      <nz-select
+        formControlName="parents"
+        id="parents"
+        [nzMode]="'multiple'"
+        [nzAllowClear]="true"
+        placeholder="Sélectionnez les parents"
+        aria-describedby="parents-help"
+      >
+        @for (parent of parents; track parent.id) {
+          <nz-option [nzValue]="parent.id" [nzLabel]="parent.nom"></nz-option>
+        }
+      </nz-select>
+      <div id="parents-help" class="ant-form-explain">
+        Sélectionnez un ou plusieurs parents de l’enfant.
+      </div>
+    </nz-form-control>
+  </nz-form-item>
+
+  <!-- Actions -->
+  <nz-form-item>
+    <nz-form-control>
+      <button
+        nz-button
+        nzType="primary"
+        type="submit"
+        [disabled]="enfantForm.invalid"
+      >
+        Soumettre
+      </button>
+      <button nz-button nzType="default" type="button" (click)="onReset()">
+        Réinitialiser
+      </button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

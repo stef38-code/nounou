@@ -3,7 +3,7 @@ import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
 import angularEslintPlugin from '@angular-eslint/eslint-plugin';
 import angularEslintTemplatePlugin from '@angular-eslint/eslint-plugin-template';
 import prettierPlugin from 'eslint-plugin-prettier';
-import { globalIgnores } from "eslint/config";
+import { globalIgnores } from 'eslint/config';
 import ngParser from '@angular-eslint/template-parser';
 // Définir une constante pour les fichiers/dossiers à ignorer
 const ignorePaths = [
@@ -11,14 +11,13 @@ const ignorePaths = [
   '**/node_modules',
   '**/coverage',
   '**/.nx',
-  "**/.angular",
+  '**/.angular',
   '**/build/**',
-  "**/.husky",
-  "**/.git",
-  "**/.vscode",
-  "**/.idea"
+  '**/.husky',
+  '**/.git',
+  '**/.vscode',
+  '**/.idea',
 ];
-
 
 // Configuration commune des plugins
 const commonPlugins = {
@@ -29,7 +28,7 @@ const commonPlugins = {
 
 // Règles communes pour le formatage
 const commonPrettierRules = {
-  ...prettierPlugin.configs.rules
+  ...prettierPlugin.configs.rules,
 };
 
 // Règles pour Angular ESLint
@@ -109,6 +108,7 @@ export default [
     },
     rules: {
       ...angularEslintTemplatePlugin.configs.recommended.rules,
+      ...angularEslintTemplatePlugin.configs.accessibility.rules,
       '@angular-eslint/template/button-has-type': 'warn',
       '@angular-eslint/template/no-distracting-elements': 'warn',
       '@angular-eslint/template/table-scope': 'warn',

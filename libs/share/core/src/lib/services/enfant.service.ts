@@ -28,13 +28,13 @@ export class EnfantService {
   }
 
   /**
-   * Génère une liste simulée de 20 enfants.
-   * Utilise le service EnfantFakerService pour créer des données fictives d'enfants.
-   * @returns Tableau d'objets Enfant contenant les données simulées.
+   * Génère une liste d'enfants aléatoires.
+   * @param nombre Nombre d'enfants à générer. Par défaut à 20
+   * @returns Tableau d'objets Enfant.
    */
-  private genererListeEnfants(): Enfant[] {
+  private genererListeEnfants(nombre = 20): Enfant[] {
     const enfants: Enfant[] = [];
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < nombre; i++) {
       enfants.push(this.enfantFakerService.creerEnfantMock());
     }
     return enfants;

@@ -19,4 +19,5 @@ export interface Enfant {
   dateNaissance: Date;
   sexe: SexeType;
   parents: Parent[];
+  fratrie: Enfant[];
 }

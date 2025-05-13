@@ -49,14 +49,17 @@ export class EnfantFakerService {
     });
 
     const parents: Parent[] = this.parentFakerService.genererParentsMock();
-
-    return {
-      id,
-      nom,
-      prenom,
-      dateNaissance,
-      sexe,
-      parents,
-    } as Enfant;
+    return {} as Enfant;
+    //   return {
+    //     id,
+    //     nom,
+    //     prenom,
+    //     dateNaissance,
+    //     sexe,
+    //     [],
+    //     [],
+    //     []
+    //   } as Enfant;
+    // }
   }
 }

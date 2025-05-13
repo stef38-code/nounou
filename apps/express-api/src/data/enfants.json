@@ -1,0 +1,27 @@
+[
+  {
+    "id": "9e61b746-6cee-4ba1-b8ed-41b5d91a81cb",
+    "nom": "Durand",
+    "prenom": "Alice",
+    "dateNaissance": "2015-05-12",
+    "sexe": "Femme",
+    "parents": [
+      "1a34bf2e-bdf2-4b94-8743-654b4e209cbc",
+      "bc4a1c53-ef88-4899-95a8-3e2b119962f7"
+    ],
+    "personne_autorisee": [],
+    "fratrie": []
+  },
+  {
+    "id": "5e37c507-e72f-4c0a-8f24-572c3487ec72",
+    "nom": "Martin",
+    "prenom": "Paul",
+    "dateNaissance": "2018-06-20",
+    "sexe": "Homme",
+    "parents": [
+      "b6a11afe-1fd9-4d03-b305-f1de58b748cd"
+    ],
+    "personne_autorisee": [],
+    "fratrie": []
+  }
+]

@@ -1,0 +1,53 @@
+[
+  {
+    "id": "1a34bf2e-bdf2-4b94-8743-654b4e209cbc",
+    "nom": "Durand",
+    "prenom": "Marie",
+    "relation": "Mère",
+    "sexe": "Femme",
+    "adressePostal": "1c5d3fce-22b2-4e10-b93a-1fa290dbec01",
+    "emails": [
+      "d7e5ebbc-2458-4499-b403-2db6a934ae5e"
+    ],
+    "telephones": [
+      "16bb23a2-5de4-4b61-8cb9-d71ba7f5f379"
+    ],
+    "enfants": [
+      "9e61b746-6cee-4ba1-b8ed-41b5d91a81cb"
+    ]
+  },
+  {
+    "id": "bc4a1c53-ef88-4899-95a8-3e2b119962f7",
+    "nom": "Dupont",
+    "prenom": "Jean",
+    "relation": "Père",
+    "sexe": "Homme",
+    "adressePostal": "3f26c97f-d3bf-4e06-98b2-957f3a3b01a5",
+    "emails": [
+      "5c2f72f8-6789-4ac5-92bf-dc3b0c5f86ea"
+    ],
+    "telephones": [
+      "d2158fb8-e97f-416b-9b68-2c3426b7eb43"
+    ],
+    "enfants": [
+      "9e61b746-6cee-4ba1-b8ed-41b5d91a81cb"
+    ]
+  },
+  {
+    "id": "b6a11afe-1fd9-4d03-b305-f1de58b748cd",
+    "nom": "Martin",
+    "prenom": "Julie",
+    "relation": "Mère",
+    "sexe": "Femme",
+    "adressePostal": "8c935a51-832a-4bf4-8149-9ef6221162d3",
+    "emails": [
+      "76bcd257-1a9b-4ccc-9a4f-61723acf0e84"
+    ],
+    "telephones": [
+      "99e84db9-4601-4197-b157-43a6a7e34ded"
+    ],
+    "enfants": [
+      "5e37c507-e72f-4c0a-8f24-572c3487ec72"
+    ]
+  }
+]

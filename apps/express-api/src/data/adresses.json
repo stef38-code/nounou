@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1c5d3fce-22b2-4e10-b93a-1fa290dbec01",
+    "numero": "12",
+    "voie": "Rue de Paris",
+    "codePostal": "75001",
+    "ville": "Paris"
+  },
+  {
+    "id": "3f26c97f-d3bf-4e06-98b2-957f3a3b01a5",
+    "numero": "45",
+    "voie": "Avenue Victor Hugo",
+    "codePostal": "69006",
+    "ville": "Lyon"
+  },
+  {
+    "id": "8c935a51-832a-4bf4-8149-9ef6221162d3",
+    "numero": "8A",
+    "voie": "Rue Nationale",
+    "codePostal": "59000",
+    "ville": "Lille"
+  },
+  {
+    "id": "4da80fff-4715-4d66-859e-1f6a6b76d0c1",
+    "numero": "100",
+    "voie": "Boulevard Haussmann",
+    "codePostal": "75008",
+    "ville": "Paris"
+  },
+  {
+    "id": "f987f8e8-9254-4ad8-b9a4-d51983e5f5ae",
+    "numero": "25B",
+    "voie": "Rue Jeanne d'Arc",
+    "codePostal": "31000",
+    "ville": "Toulouse"
+  },
+  {
+    "id": "59cb90a1-472d-4f89-80e0-0717e71d82c5",
+    "numero": "7",
+    "voie": "Rue des Lilas",
+    "codePostal": "06000",
+    "ville": "Nice"
+  }
+]

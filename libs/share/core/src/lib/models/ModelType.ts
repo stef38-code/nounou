@@ -7,9 +7,15 @@ export type SexeType = 'Homme' | 'Femme';
  * Type énuméré représentant le lien de parenté.
  * @type {('Mère' | 'Père')} Les valeurs possibles sont 'Mère' ou 'Père'.
  */
-export type RelationType = 'Mère' | 'Père';
+export type RelationType =
+  | 'Mère'
+  | 'Père'
+  | 'Grand-parent'
+  | 'Frère'
+  | 'Soeur'
+  | 'Autre';
 /**
  * Type énuméré représentant le type de communication.
  * @type {('personnel' | 'professionnel')} Les valeurs possibles sont 'personnel' ou 'professionnel'.
  */
-export type communicationType = 'personnel' | 'professionnel';
+export type communicationType = 'Personnel' | 'Professionnel';

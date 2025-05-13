@@ -1,0 +1,63 @@
+{
+  "name": "gestion-enfants-api",
+  "version": "1.0.0",
+  "port": 3000,
+  "environment": "development",
+  "routes": {
+    "adresses": {
+      "get": {
+        "endpoint": "/api/adresses",
+        "dataFile": "./data/adresses.json"
+      },
+      "post": {
+        "endpoint": "/api/adresses",
+        "dataFile": "./data/adresses.json"
+      }
+    },
+    "emails": {
+      "get": {
+        "endpoint": "/api/emails",
+        "dataFile": "./data/emails.json"
+      },
+      "post": {
+        "endpoint": "/api/emails",
+        "dataFile": "./data/emails.json"
+      }
+    },
+    "telephones": {
+      "get": {
+        "endpoint": "/api/telephones",
+        "dataFile": "./data/telephones.json"
+      },
+      "post": {
+        "endpoint": "/api/telephones",
+        "dataFile": "./data/telephones.json"
+      }
+    },
+    "parents": {
+      "get": {
+        "endpoint": "/api/parents",
+        "dataFile": "./data/parents.json"
+      },
+      "post": {
+        "endpoint": "/api/parents",
+        "dataFile": "./data/parents.json"
+      }
+    },
+    "enfants": {
+      "get": {
+        "endpoint": "/api/enfants",
+        "dataFile": "./data/enfants.json"
+      },
+      "post": {
+        "endpoint": "/api/enfants",
+        "dataFile": "./data/enfants.json"
+      }
+    }
+  },
+  "middlewares": [
+    "express.json",
+    "cors",
+    "compression"
+  ]
+}

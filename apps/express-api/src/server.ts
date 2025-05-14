@@ -2,9 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import compression from 'compression';
 import morgan from 'morgan';
-import { readJSONFile, writeJSONFile } from './fileJsonOperations';
-import { Parent } from './models/parent'; // Import des fonctions utilitaires
-import { Enfant } from './models/enfant'; // Import des fonctions utilitaires
+import { readJSONFile, writeJSONFile } from './fileJsonOperations'; // Import des fonctions utilitaires
+import { Parent } from './models/parent';
+import { Enfant } from './models/enfant';
 
 const app = express();
 app.use(express.json());

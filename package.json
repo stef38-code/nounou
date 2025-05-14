@@ -6,7 +6,7 @@
     "format": "npx prettier --write \"{app,libs}/**/src/**/*.{ts,html,css}\"",
     "lint-staged": "npx lint-staged",
     "prepare": "husky",
-    "express-api-dev": "npx nx serve express-api"
+    "express-api-dev": "npx nx serve express-api --no-inspect"
   },
   "lint-staged": {
     "*.ts": [
@@ -89,7 +89,6 @@
     "morgan": "^1.10.0",
     "nx": "21.0.2",
     "prettier": "^3.5.3",
-    "react-refresh": "^0.10.0",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.2",
     "tslib": "^2.3.0",

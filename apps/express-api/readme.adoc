@@ -1,5 +1,12 @@
 # Express
 
+## Commandes
+
+```shell
+#lancement du serveur express sans pouvoir se relancer suite à une modification
+npx nx serve express-api-dev
+```
+
 ## note à revoir
 
 - Pourquoi des packages react !!

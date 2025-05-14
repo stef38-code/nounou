@@ -6,7 +6,7 @@
     "format": "npx prettier --write \"{app,libs}/**/src/**/*.{ts,html,css}\"",
     "lint-staged": "npx lint-staged",
     "prepare": "husky",
-    "express-api": "npx nx serve express-api"
+    "express-api-dev": "npx nx serve express-api"
   },
   "lint-staged": {
     "*.ts": [

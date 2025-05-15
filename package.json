@@ -11,7 +11,9 @@
     "migrate:nx:apply": "npx nx migrate --run-migrations",
     "install:standart": "npm install",
     "install:force": "npm install --force",
-    "install:legacy-peer-deps": "npm install --legacy-peer-deps"
+    "install:legacy-peer-deps": "npm install --legacy-peer-deps",
+    "build:gestion-nounou:prod:stat": "npx nx build gestion-enfants --configuration=production --stats-json",
+    "build:gestion-nounou:prod:analyse": "npx webpack-bundle-analyzer dist/apps/gestion-enfants/stats.json"
   },
   "lint-staged": {
     "*.ts": [
@@ -44,6 +46,7 @@
     "primeflex": "^4.0.0",
     "rxjs": "~7.8.0",
     "uuid": "^11.1.0",
+    "winston": "^3.17.0",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {

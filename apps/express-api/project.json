@@ -20,6 +20,12 @@
           "buildTarget": "express-api:build:development"
         },
         "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/express-api/src/environments/environment.ts",
+              "with": "apps/express-api/src/environments/environment.prod.ts"
+            }
+          ],
           "buildTarget": "express-api:build:production"
         }
       }

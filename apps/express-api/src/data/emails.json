@@ -1,0 +1,27 @@
+[
+  {
+    "id": "d7e5ebbc-2458-4499-b403-2db6a934ae5e",
+    "type": "Personnel",
+    "email": "marie.durand@example.com"
+  },
+  {
+    "id": "5c2f72f8-6789-4ac5-92bf-dc3b0c5f86ea",
+    "type": "Professionnel",
+    "email": "jean.dupont@workmail.com"
+  },
+  {
+    "id": "76bcd257-1a9b-4ccc-9a4f-61723acf0e84",
+    "type": "Personnel",
+    "email": "julie.martin@example.com"
+  },
+  {
+    "id": "5157efaa-d71b-4e07-b731-3ae9b556cf3a",
+    "type": "Personnel",
+    "email": "olivier.durand@example.com"
+  },
+  {
+    "id": "8ac25eb2-6804-4be4-a78e-99bf76f1dac2",
+    "type": "Professionnel",
+    "email": "laura.dupont@companymail.com"
+  }
+]

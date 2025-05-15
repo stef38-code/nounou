@@ -18,6 +18,7 @@ export interface Enfant {
   prenom: string;
   dateNaissance: Date;
   sexe: SexeType;
-  parents: Parent[];
-  fratrie: Enfant[];
+  parents: Parent[]; //clef etrangere sur le fichier parents.json, 1 à 2 parents (obligatoire)
+  famille: Parent[]; //clef etrangere sur le fichier parents.json, 0 à n avec  SexeType != 'Mère' && 'Père'
+  fratrie: Enfant[]; //clef etrangere sur le fichier enfants.json, 0 à n
 }

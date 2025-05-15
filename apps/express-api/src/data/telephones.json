@@ -1,0 +1,27 @@
+[
+  {
+    "id": "16bb23a2-5de4-4b61-8cb9-d71ba7f5f379",
+    "type": "Personnel",
+    "telephone": "+33123456789"
+  },
+  {
+    "id": "d2158fb8-e97f-416b-9b68-2c3426b7eb43",
+    "type": "Professionnel",
+    "telephone": "+33698765432"
+  },
+  {
+    "id": "99e84db9-4601-4197-b157-43a6a7e34ded",
+    "type": "Personnel",
+    "telephone": "+33745678910"
+  },
+  {
+    "id": "fb2907f4-e119-4e42-92d1-3a4ad9f9dbf5",
+    "type": "Professionnel",
+    "telephone": "+33198745632"
+  },
+  {
+    "id": "ceb5f178-fc3b-442c-b84f-a6f9d3212154",
+    "type": "Personnel",
+    "telephone": "+33234568790"
+  }
+]

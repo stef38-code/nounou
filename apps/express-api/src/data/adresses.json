@@ -40,5 +40,75 @@
     "voie": "Rue des Lilas",
     "codePostal": "06000",
     "ville": "Nice"
+  },
+  {
+    "id": "a251f318-abc4-4c1f-a98b-2e1b9e6ff37d",
+    "numero": "12",
+    "voie": "Avenue des Érables",
+    "codePostal": "75008",
+    "ville": "Paris"
+  },
+  {
+    "id": "3b2c9c6a-9faa-4de1-8df4-f54a6260a3de",
+    "numero": "45",
+    "voie": "Place de la Liberté",
+    "codePostal": "69002",
+    "ville": "Lyon"
+  },
+  {
+    "id": "4fd73b29-ebba-4efa-9aea-18449bcb6f6d",
+    "numero": "22",
+    "voie": "Rue des Tulipes",
+    "codePostal": "34000",
+    "ville": "Montpellier"
+  },
+  {
+    "id": "07ce3f55-0609-42a4-81b2-7334178ecfd6",
+    "numero": "1",
+    "voie": "Boulevard de la République",
+    "codePostal": "33000",
+    "ville": "Bordeaux"
+  },
+  {
+    "id": "fd619e69-8b36-4bd8-9110-a0aaf7ed5c99",
+    "numero": "18",
+    "voie": "Allée des Platanes",
+    "codePostal": "31000",
+    "ville": "Toulouse"
+  },
+  {
+    "id": "6b3f18c7-b2b8-45d6-8b13-5713ade441cd",
+    "numero": "8",
+    "voie": "Rue du Port",
+    "codePostal": "44000",
+    "ville": "Nantes"
+  },
+  {
+    "id": "b8ebb97c-72ae-4ea8-bcb0-c25d90945f29",
+    "numero": "33",
+    "voie": "Rue des Mimosas",
+    "codePostal": "83000",
+    "ville": "Toulon"
+  },
+  {
+    "id": "8359ae2c-80e4-4ea8-8e23-89db4ae5e96b",
+    "numero": "56",
+    "voie": "Avenue des Champs",
+    "codePostal": "78100",
+    "ville": "Saint-Germain-en-Laye"
+  },
+  {
+    "id": "c38f5dc8-3c74-43c8-aae0-51fda4a905cc",
+    "numero": "29",
+    "voie": "Chemin des Vignes",
+    "codePostal": "67000",
+    "ville": "Strasbourg"
+  },
+  {
+    "id": "a24f6957-4f6b-4b64-a7cd-3fb73e39fcc7",
+    "numero": "23",
+    "voie": "Impasse des Acacias",
+    "codePostal": "59000",
+    "ville": "Lille"
   }
 ]

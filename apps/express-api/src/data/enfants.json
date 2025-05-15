@@ -9,7 +9,14 @@
       "1a34bf2e-bdf2-4b94-8743-654b4e209cbc",
       "bc4a1c53-ef88-4899-95a8-3e2b119962f7"
     ],
-    "personne_autorisee": [],
+    "famille": [
+      "4ea9fabc-643b-4930-8003-fdf7d8fb8e65",
+      "5bfd0cb7-4b3a-4762-98a4-5c7e98e23eeb",
+      "837d575f-76d3-4a41-8091-a6b9189e1c9a",
+      "b2455abf-b9bc-48da-a3f9-c221d041e48c",
+      "7ef6a063-799b-4c06-9fa9-59f57f05cdd7",
+      "d54dbebd-c8b9-4162-885e-7017628d938a"
+    ],
     "fratrie": []
   },
   {
@@ -21,7 +28,23 @@
     "parents": [
       "b6a11afe-1fd9-4d03-b305-f1de58b748cd"
     ],
-    "personne_autorisee": [],
-    "fratrie": []
+    "famille": [],
+    "fratrie": [
+      "5e37c507-e72f-4c0a-8f24-572c3487ec76"
+    ]
+  },
+  {
+    "id": "5e37c507-e72f-4c0a-8f24-572c3487ec76",
+    "nom": "Martin",
+    "prenom": "Hugo",
+    "dateNaissance": "2022-10-25",
+    "sexe": "Homme",
+    "parents": [
+      "b6a11afe-1fd9-4d03-b305-f1de58b748cd"
+    ],
+    "famille": [],
+    "fratrie": [
+      "5e37c507-e72f-4c0a-8f24-572c3487ec72"
+    ]
   }
 ]

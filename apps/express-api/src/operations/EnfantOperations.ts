@@ -24,7 +24,7 @@ export function listesEnfantsAvecParent(): Enfant[] {
     // Recherche des parents associés à l'enfant
     const parentsAssocies: Parent[] = rechercherParents(enfant.parents);
     const familleAssocies: Parent[] = rechercherParents(enfant.famille);
-
+    const fratrieAssocies: Enfant[] = rechercherFratrie(enfant.fratrie);
     // Construire l'objet enrichi pour l'enfant
     return {
       id: enfant.id, // Identifiant unique de l'enfant
@@ -36,7 +36,7 @@ export function listesEnfantsAvecParent(): Enfant[] {
       // Informations supplémentaires enrichies
       parents: parentsAssocies, // Liste des parents associés
       famille: familleAssocies, // Famille
-      fratrie: [], // Fratrie (champ vide par défaut dans cette version)
+      fratrie: fratrieAssocies, // Fratrie
     } as Enfant;
   });
 }

@@ -9,7 +9,9 @@
     "express-api-dev": "npx nx serve express-api --no-inspect",
     "migrate:nx:check:latest": "npx nx migrate latest",
     "migrate:nx:apply": "npx nx migrate --run-migrations",
-    "install:force": "npm install --force"
+    "install:standart": "npm install",
+    "install:force": "npm install --force",
+    "install:legacy-peer-deps": "npm install --legacy-peer-deps"
   },
   "lint-staged": {
     "*.ts": [
@@ -37,7 +39,7 @@
     "@faker-js/faker": "^9.7.0",
     "axios": "^1.6.0",
     "date-fns": "^4.1.0",
-    "express": "^5.1.0",
+    "express": "^4.21.2",
     "ng-zorro-antd": "^19.2.2",
     "primeflex": "^4.0.0",
     "rxjs": "~7.8.0",

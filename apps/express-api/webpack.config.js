@@ -15,6 +15,7 @@ module.exports = {
         './src/assets',
         './src/models',
         './src/data',
+        './src/operations',
         './src/express.json',
       ],
       optimization: false,

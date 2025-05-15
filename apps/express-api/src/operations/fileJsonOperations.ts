@@ -28,7 +28,7 @@ export const readJSONFile = <T>(fileName: string): T[] => {
  * @param fileName Nom du fichier JSON (chemin relatif à BASE_DATA_PATH)
  * @param data Les données à écrire dans le fichier.
  */
-export const writeJSONFile = (fileName: string, data: any): void => {
+export const writeJSONFile = <T>(fileName: string, data: T[]): void => {
   try {
     const filePath = path.join(BASE_DATA_PATH, fileName);
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2));

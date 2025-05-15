@@ -14,6 +14,7 @@ export interface Email {
  * Interface représentant un numéro de téléphone avec son type de communication associé
  */
 export interface Telephone {
+  id: string;
   /** Le type de communication (personnel, professionnel, etc.) */
   type: communicationType;
   /** Le numéro de téléphone */

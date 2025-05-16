@@ -7,11 +7,14 @@
     "lint-staged": "npx lint-staged",
     "prepare": "husky",
     "express-api-dev": "npx nx serve express-api --no-inspect",
+    "gestion-enfants-dev": "npx nx serve gestion-enfants --no-inspect",
     "migrate:nx:check:latest": "npx nx migrate latest",
     "migrate:nx:apply": "npx nx migrate --run-migrations",
     "install:standart": "npm install",
     "install:force": "npm install --force",
-    "install:legacy-peer-deps": "npm install --legacy-peer-deps"
+    "install:legacy-peer-deps": "npm install --legacy-peer-deps",
+    "build:gestion-nounou:prod:stat": "npx nx build gestion-enfants --configuration=production --stats-json",
+    "build:gestion-nounou:prod:analyse": "npx webpack-bundle-analyzer dist/apps/gestion-enfants/stats.json"
   },
   "lint-staged": {
     "*.ts": [
@@ -44,6 +47,7 @@
     "primeflex": "^4.0.0",
     "rxjs": "~7.8.0",
     "uuid": "^11.1.0",
+    "winston": "^3.17.0",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
@@ -94,10 +98,12 @@
     "nx": "21.0.3",
     "prettier": "^3.5.3",
     "ts-jest": "^29.1.0",
+    "ts-loader": "^9.5.2",
     "ts-node": "^10.9.2",
     "tslib": "^2.3.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.19.0",
+    "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^5.1.4"
   }
 }

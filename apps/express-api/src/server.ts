@@ -5,6 +5,9 @@ import morgan from 'morgan';
 import { readJSONFile, writeJSONFile } from './operations/fileJsonOperations'; // Import des fonctions utilitaires
 import { listesEnfantsAvecParent } from './operations/EnfantOperations';
 import { Enfant } from '@core';
+import { LoggerService } from './services/LoggerService';
+
+const logger = new LoggerService();
 
 const app = express();
 app.use(express.json());
@@ -14,13 +17,17 @@ app.use(compression());
 
 // Exemple de gestion de la route GET /api/enfants
 app.get('/api/enfants', (req, res) => {
-  console.log('[LOG] Requête GET /api/enfants reçue');
+  logger.log('Requête GET /api/enfants reçue');
 
   const enfantsAvecParents = listesEnfantsAvecParent();
 
   if (enfantsAvecParents.length === 0) {
+    logger.warn('Aucun enfant trouvé.');
     return res.status(404).json({ message: 'Aucun enfant trouvé.' });
   }
+  logger.debug(
+    `Nombre d'enfants avec parents trouvés : ${enfantsAvecParents.length}`
+  );
   res.json(enfantsAvecParents);
 });
 
@@ -39,5 +46,5 @@ app.post('/api/enfants', (req, res) => {
 // Lancer le serveur
 const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`Serveur démarré sur http://localhost:${PORT}`);
+  logger.log(`Serveur démarré sur http://localhost:${PORT}`);
 });

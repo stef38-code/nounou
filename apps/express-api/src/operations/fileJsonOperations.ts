@@ -1,6 +1,8 @@
 import fs from 'fs';
 import path from 'path';
+import { LoggerService } from '../services/LoggerService';
 
+const logger = new LoggerService();
 // Chemin de base des données
 const BASE_DATA_PATH = path.resolve(
   __dirname,
@@ -15,10 +17,10 @@ const BASE_DATA_PATH = path.resolve(
 export const readJSONFile = <T>(fileName: string): T[] => {
   try {
     const filePath = path.join(BASE_DATA_PATH, fileName);
-    console.log(`[LOG] Lecture du fichier : ${filePath}`);
+    logger.log(`Lecture du fichier : ${filePath}`);
     return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
   } catch (error) {
-    console.error(`[ERREUR] Impossible de lire le fichier ${fileName}:`, error);
+    logger.error(`Impossible de lire le fichier ${fileName}:` + error);
     return [];
   }
 };

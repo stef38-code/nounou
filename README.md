@@ -1,5 +1,11 @@
 # Nounou
 
+## Mise à jour
+
+```shell
+#liste des mise à jours disponibles
+npm outdated
+```
 ## Etudier
 
 https://www.sfeir.dev/front/angular-forms-destructurer-pour-mieux-structurer/

@@ -29,6 +29,12 @@ const commonPlugins = {
 // Règles communes pour le formatage
 const commonPrettierRules = {
   ...prettierPlugin.configs.rules,
+  'prettier/prettier': [
+    'error',
+    {
+      printWidth: 120, // Définit la longueur maximale d'une ligne
+    },
+  ],
 };
 
 // Règles pour Angular ESLint

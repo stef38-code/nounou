@@ -89,6 +89,7 @@ export class EnfantService {
   supprimerEnfant(id: string): void {
     this.supprimerIdEnfant.set(id);
     const resource = this.suprimerEnfant.value;
+    console.log('ressource', resource);
     if (resource !== undefined) {
       this.enfantsResource.reload();
     }

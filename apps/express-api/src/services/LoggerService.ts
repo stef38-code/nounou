@@ -1,11 +1,11 @@
 import * as winston from 'winston';
 
 export class LoggerService {
-  private logger: winston.Logger;
+  readonly logger: winston.Logger;
 
   constructor() {
     // Récupérer l'environnement (par exemple : 'development' ou 'production')
-    const environment = process.env.NODE_ENV || 'development';
+    const environment = process.env.NODE_ENV ?? 'development';
 
     // Définir le niveau de log selon l'environnement
     const logLevel = environment === 'production' ? 'error' : 'debug';
@@ -32,7 +32,7 @@ export class LoggerService {
     });
 
     // Log initial pour vérifier la configuration
-    this.logger.info(`Logger configuré pour l'environnement : ${environment}`);
+    //this.logger.info(`Logger configuré pour l'environnement : ${environment}`);
   }
 
   log(message: string): void {

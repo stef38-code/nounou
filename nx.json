@@ -84,5 +84,6 @@
     "@nx/angular:component": {
       "style": "css"
     }
-  }
+  },
+  "disableDaemon": true
 }

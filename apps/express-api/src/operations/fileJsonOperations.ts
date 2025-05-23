@@ -4,10 +4,7 @@ import { LoggerService } from '../services/LoggerService';
 
 const logger = new LoggerService();
 // Chemin de base des données
-const BASE_DATA_PATH = path.resolve(
-  __dirname,
-  '../../../apps/express-api/src/data'
-);
+const BASE_DATA_PATH = path.resolve(__dirname, '../../../apps/express-api/src/data');
 
 /**
  * Lit un fichier JSON et retourne son contenu parsé.
@@ -17,7 +14,7 @@ const BASE_DATA_PATH = path.resolve(
 export const readJSONFile = <T>(fileName: string): T[] => {
   try {
     const filePath = path.join(BASE_DATA_PATH, fileName);
-    logger.log(`Lecture du fichier : ${filePath}`);
+    //logger.log(`Lecture du fichier : ${filePath}`);
     return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
   } catch (error) {
     logger.error(`Impossible de lire le fichier ${fileName}:` + error);
@@ -36,9 +33,6 @@ export const writeJSONFile = <T>(fileName: string, data: T[]): void => {
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
     console.log(`[LOG] Écriture réussie dans le fichier : ${filePath}`);
   } catch (error) {
-    console.error(
-      `[ERREUR] Impossible d'écrire dans le fichier ${fileName}:`,
-      error
-    );
+    console.error(`[ERREUR] Impossible d'écrire dans le fichier ${fileName}:`, error);
   }
 };

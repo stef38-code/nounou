@@ -43,3 +43,6 @@ Thumbs.db
 
 .angular
 /logs/app.log
+.cursor/rules/nx-rules.mdc
+.github/instructions/nx.instructions.md
+/migrations.json

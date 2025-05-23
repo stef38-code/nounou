@@ -4,7 +4,9 @@ import { rechercherAdresse } from './AdresseOperations';
 import { Adresse, Email, Parent, Telephone } from '@core';
 import { rechercherEmail } from './EmailOperations';
 import { rechercherTelephone } from './TelephoneOperations';
+import { LoggerService } from '../services/LoggerService';
 
+const logger = new LoggerService();
 /**
  * Recherche une liste de parents à partir de leurs identifiants, et enrichit leurs données
  * avec leurs adresses, emails et numéros de téléphone.
@@ -14,6 +16,7 @@ import { rechercherTelephone } from './TelephoneOperations';
  */
 export const rechercherParents = (idParents: string[]): Parent[] => {
   if (idParents === undefined || idParents.length === 0) {
+    logger.warn('Aucun identifiant de parent fourni');
     return [];
   }
   /**
@@ -29,10 +32,8 @@ export const rechercherParents = (idParents: string[]): Parent[] => {
    *
    * @type {(ParentJsonEntity | undefined)[]}
    */
-  const parentsAssocies: ParentJsonEntity[] = filtrerParentsParIds(
-    idParents,
-    parents
-  );
+  const parentsAssocies: (ParentJsonEntity | undefined)[] =
+    filtrerParentsParIds(idParents, parents);
   /**
    * Construire la liste finale des parents enrichis avec leurs adresses, emails et téléphones.
    */
@@ -52,11 +53,24 @@ export const rechercherParents = (idParents: string[]): Parent[] => {
  * const parentsEnrichis = assembleInformationParent(parentsDeBase);
  * // Retourne: [{id: "1", nom: "Dupont", prenom: "Jean", adresse: {...}, emails: [...], telephones: [...]}]
  */
-function assembleInformationParent(parentsAssocies: ParentJsonEntity[]) {
-  return parentsAssocies.map((parent: ParentJsonEntity) => {
+function assembleInformationParent(
+  parentsAssocies: (ParentJsonEntity | undefined)[]
+) {
+  return parentsAssocies.map((parent) => {
     if (!parent) {
-      // Gestion des cas où un parentID ne correspond à aucun parent dans le fichier JSON
-      throw new Error(`Parent avec l'ID "${parent.id}" introuvable.`);
+      logger.error(
+        'parentID ne correspond à aucun parent dans le fichier JSON'
+      );
+      throw new Error('Parent introuvable dans la liste associée.');
+    }
+    if (!parent) {
+      // Gestion des cas où
+      logger.error(
+        'parentID ne correspond à aucun parent dans le fichier JSON'
+      );
+      throw new Error(
+        'parentID ne correspond à aucun parent dans le fichier JSON'
+      );
     }
 
     // Recherche et enrichissement des données correspondantes
@@ -65,9 +79,6 @@ function assembleInformationParent(parentsAssocies: ParentJsonEntity[]) {
     const telephoneAssocies: Telephone[] = rechercherTelephone(
       parent.telephones
     );
-
-    // Affichage pour faciliter le débogage
-    console.table(adresseAssocies);
 
     // Construction de l'objet `Parent` enrichi
     return {

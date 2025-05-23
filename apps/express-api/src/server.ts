@@ -2,46 +2,38 @@ import express from 'express';
 import cors from 'cors';
 import compression from 'compression';
 import morgan from 'morgan';
-import { readJSONFile, writeJSONFile } from './operations/fileJsonOperations'; // Import des fonctions utilitaires
-import { listesEnfantsAvecParent } from './operations/EnfantOperations';
-import { Enfant } from '@core';
 import { LoggerService } from './services/LoggerService';
+import routeEnfants from './routes/EnfantsApiRouter';
 
 const logger = new LoggerService();
 
 const app = express();
 app.use(express.json());
 app.use(morgan('dev'));
-app.use(cors());
 app.use(compression());
+app.use(cors());
 
-// Exemple de gestion de la route GET /api/enfants
-app.get('/api/enfants', (req, res) => {
-  logger.log('Requête GET /api/enfants reçue');
+// Middleware pour intercepter et afficher toutes les requêtes
+app.use((req, res, next) => {
+  console.log('Requête reçue :');
+  console.log(` - Méthode : ${req.method}`);
+  console.log(` - URL : ${req.url}`);
+  console.log(` - Originale URL : ${req.originalUrl}`);
+  console.log(` - En-têtes :`, req.headers);
+  console.log(` - Paramètres :`, req.params);
+  console.log(` - Requête :`, req.query);
 
-  const enfantsAvecParents = listesEnfantsAvecParent();
-
-  if (enfantsAvecParents.length === 0) {
-    logger.warn('Aucun enfant trouvé.');
-    return res.status(404).json({ message: 'Aucun enfant trouvé.' });
+  // Capture le corps si nécessaire (uniquement pour POST/PUT)
+  if (['POST', 'PUT', 'PATCH', 'DELETE'].includes(req.method)) {
+    req.on('data', (chunk) => {
+      console.log(` - Corps de la requête : ${chunk.toString()}`);
+    });
   }
-  logger.debug(
-    `Nombre d'enfants avec parents trouvés : ${enfantsAvecParents.length}`
-  );
-  res.json(enfantsAvecParents);
+
+  next(); // Passer à la route suivante
 });
-
-// Exemple de gestion de la route POST /api/enfants
-app.post('/api/enfants', (req, res) => {
-  console.log('[LOG] Requête POST /api/enfants reçue');
-
-  const enfants = readJSONFile<Enfant>('enfants.json');
-  const newEnfant = { id: Date.now().toString(), ...req.body } as Enfant;
-  enfants.push(newEnfant);
-
-  writeJSONFile<Enfant>('enfants.json', enfants); // Utilisation de la fonction écriture
-  res.status(201).json(newEnfant);
-});
+// Connecte les routes enfant sous le segment /api/enfants
+app.use('/api/enfants', routeEnfants);
 
 // Lancer le serveur
 const PORT = 3000;

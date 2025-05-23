@@ -9,4 +9,5 @@ npx nx serve express-api-dev
 
 ## note à revoir
 
+https://github.com/rblmdst/rxjs_zero_server
 - Pourquoi des packages react !!

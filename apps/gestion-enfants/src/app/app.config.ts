@@ -8,10 +8,10 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import fr from '@angular/common/locales/fr';
 
 import { provideNzIcons } from 'ng-zorro-antd/icon';
-import { fr_FR, provideNzI18n } from 'ng-zorro-antd/i18n';
+import { fr_FR, NZ_I18N, provideNzI18n } from 'ng-zorro-antd/i18n';
 import { IconDefinition } from '@ant-design/icons-angular';
 import * as AllIcons from '@ant-design/icons-angular/icons';
-import { loggerReponseInterceptor, loggerRequeteInterceptor } from '@core';
+import { loggerHttpInterceptor } from '@core';
 
 registerLocaleData(fr);
 
@@ -25,9 +25,10 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(appRoutes),
     //provideHttpClient(withJsonpSupport()),
-    provideHttpClient(withInterceptors([loggerRequeteInterceptor, loggerReponseInterceptor])),
+    provideHttpClient(withInterceptors([loggerHttpInterceptor])),
     provideAnimationsAsync(),
     provideNzIcons(icons),
     provideNzI18n(fr_FR),
+    { provide: NZ_I18N, useValue: fr_FR },
   ],
 };

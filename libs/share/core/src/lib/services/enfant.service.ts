@@ -1,4 +1,4 @@
-import { computed, Injectable, signal, Signal } from '@angular/core';
+import { computed, effect, Injectable, signal, Signal } from '@angular/core';
 import { httpResource, HttpResourceRef, HttpResourceRequest } from '@angular/common/http';
 import { Enfant } from '../models/enfant';
 
@@ -36,7 +36,14 @@ export class EnfantService {
         };
       return ParamRequest;
     });
+    effect(() => {
+      // Si postResource n'est PAS en chargement ET n'a PAS d'erreur
+      if (!this.suprimerEnfant.isLoading() && !this.suprimerEnfant.error()) {
+        this.enfantsResource.reload();
+      }
+    });
   }
+
   /**
    * Signal réactif dérivé des données de la ressource.
    * Retourne un tableau vide si les données ne sont pas encore disponibles.
@@ -87,13 +94,13 @@ export class EnfantService {
    * @param id L'identifiant de l'enfant à supprimer.
    */
   supprimerEnfant(id: string): void {
-    this.supprimerIdEnfant.set(id);
-    const resource = this.suprimerEnfant.value;
-    console.log('ressource', resource);
-    if (resource !== undefined) {
-      this.enfantsResource.reload();
+    this.supprimerIdEnfant.set(id); // Mettre à jour le signal
+    const resource = this.suprimerEnfant.value; // Appeler la ressource dynamique
+    if (resource()) {
+      this.enfantsResource.reload(); // Recharger les données après suppression
     }
   }
+
   /**
    * Modifier un enfant existant.
    * @param enfant L'objet enfant avec les nouvelles données à appliquer.
